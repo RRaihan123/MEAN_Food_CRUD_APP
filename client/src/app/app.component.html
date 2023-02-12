@@ -1,0 +1,18 @@
+<div class="App">
+
+        <h1>CRUD App with MEAN</h1>
+        <label>Food Name : </label>
+        <input type="text" #food (input)="getFoodId(food.value)" />
+        <label>Days Since You ate it : </label>
+        <input type="number" #days (input)="getDaysId(days.value)" />
+        <button (click)="addToList()">Add to List</button>
+        <h1>Food List</h1>
+        
+        <div class = "food" *ngFor="let row of allFood"> 
+                  <h1>{{row.foodName}}</h1> <h1>{{row.daysSinceIAte}}</h1> 
+                  <input type="text" placeholder='New Food Name' #food2 (input)="updateFoodId2(food2.value)"/>
+                  <button (click)="updateFood2(row._id)">Update</button>
+                  <button (click)="delete(row._id)">Delete</button>
+        </div>
+  
+</div>
